@@ -26,4 +26,4 @@ RUN mkdir -p $HOME/bin && cp ./aws-iam-authenticator $HOME/bin/aws-iam-authentic
 RUN echo export PATH=$HOME/bin:$PATH >> ~/.bashrc
 RUN curl -O https://get.helm.sh/helm-v2.14.1-linux-amd64.tar.gz
 RUN tar -zxvf helm-v2.14.1-linux-amd64.tar.gz
-RUN mv linux-amd64/helm /usr/local/bin/helm
+RUN cp linux-amd64/helm /usr/local/bin/helm
