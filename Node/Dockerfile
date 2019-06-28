@@ -24,3 +24,6 @@ RUN curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/
 RUN chmod +x ./aws-iam-authenticator
 RUN mkdir -p $HOME/bin && cp ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator && export PATH=$HOME/bin:$PATH && cp ./aws-iam-authenticator /usr/bin/aws-iam-authenticator
 RUN echo export PATH=$HOME/bin:$PATH >> ~/.bashrc
+RUN curl -O https://get.helm.sh/helm-v2.14.1-linux-amd64.tar.gz
+RUN tar -zxvf helm-v2.14.1-linux-amd64.tar.gz
+RUN mv linux-amd64/helm /usr/local/bin/helm
