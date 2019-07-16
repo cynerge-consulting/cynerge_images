@@ -27,3 +27,6 @@ RUN echo export PATH=$HOME/bin:$PATH >> ~/.bashrc
 RUN curl -O https://get.helm.sh/helm-v2.14.1-linux-amd64.tar.gz
 RUN tar -zxvf helm-v2.14.1-linux-amd64.tar.gz
 RUN cp linux-amd64/helm /usr/local/bin/helm
+RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+RUN unzip awscli-bundle.zip
+RUN ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
